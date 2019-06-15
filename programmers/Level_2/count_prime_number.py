@@ -26,15 +26,15 @@ def makeNumbers(numbers):
     numbers = list(numbers)
     resultA = []
     for i in range(1, len(numbers)+1):
-        resultA.append(set(permutations(numbers, i)))
+        resultA.append(permutations(numbers, i))
     resultB = [y for x in resultA for y in x]
-    answer = [str(int(''.join(j))) for j in resultB]
+    answer = set([str(int(''.join(j))) for j in resultB])
     return answer
 
 
 def countPrimeNumber(numberlist):
     answer = 0
-    for i in set(numberlist):
+    for i in numberlist:
         t = int(i)
         result = 0
         for j in range(2, t):
